@@ -1,4 +1,5 @@
 const express = require('express')
+const { validateTableName } = require('../helpers')
 
 const db = require('../db/db')
 
@@ -9,7 +10,7 @@ router.get('/', (req, res) => {
 })
 
 router.get('/all/:table', (req, res) => {
-  const table = req.params.table
+  const table = validateTableName(req.params.table)
 
   db.getAll(table)
     .then((unmatched) => {
@@ -18,9 +19,13 @@ router.get('/all/:table', (req, res) => {
       }
 
       if (table === 'loners') {
-        res.render('allLoners', dataObj)
-      } else if (table === 'families') {
-        res.render('allFamilies', dataObj)
+        res.send(unmatched)
+        //Uncomment line below once view created
+        // res.render('allLoners', dataObj)
+      } else {
+        res.send(unmatched)
+        //Uncomment line below once view created
+        // res.render('allFamilies', dataObj)
       }
     })
     .catch((err) => {
