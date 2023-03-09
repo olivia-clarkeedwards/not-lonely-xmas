@@ -33,4 +33,15 @@ router.get('/all/:table', (req, res) => {
     })
 })
 
+router.get('/loner/:name', (req, res) => {
+  const name = req.params.name
+  db.getLoner(name)
+    .then((loner) => {
+      res.send(loner)
+    })
+    .catch((err) => {
+      console.log('ohhh noooo', err.message)
+    })
+})
+
 module.exports = router
