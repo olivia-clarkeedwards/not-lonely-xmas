@@ -1,8 +1,28 @@
-{{#each unmatched}}
+{{!-- {{#each unmatched}}
   <div>
   <img>
   <p>{{first_name}}</p>
   <p>{{age}}</p>
   <p>{{description}}</p>
   </div>
-{{/each}}
+{{/each}} --}}
+
+{{>navButton}}
+<section id = "viewall-display">
+      <div class="viewall-container">
+        {{#each unmatched}}
+           <a class="viewall-front" href="google.com">
+             <div class="inside-container">
+             <div class="image-position">
+               <img src="img/profile.png" class="viewall-img-size" alt="profile">
+             </div>
+             <div class ="text-position">
+                <h2 class="title-text-viewall">{{first_name}}</h2>
+                <p>{{age}}</p>
+                <p class="text-card-viewall">{{description}}</p>
+             </div>
+           </div>
+           </a>
+        {{/each}}  
+       </div>
+     </section>
