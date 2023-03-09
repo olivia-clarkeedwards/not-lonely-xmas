@@ -88,3 +88,37 @@ font-size: 1.2em;
 }
 
 /* FOOTER-END */
+
+/* NAVIGATION-BAR */
+
+nav{
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75em 3em;
+}
+
+.logo{
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+nav ul li{
+  float: right;
+}
+
+nav ul a{
+  display: block;
+  padding: 0 0.7em;
+  color: black;
+
+} 
+
+/* END NAVIGATION-BAR */
