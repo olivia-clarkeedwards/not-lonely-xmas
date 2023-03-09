@@ -6,8 +6,9 @@
   <p>{{description}}</p>
   </div>
 {{/each}} --}}
-
-{{>navButton}}
+ <header>
+  {{>navButton}}
+ </header>
 <section id = "viewall-display">
       <div class="viewall-container">
         {{#each unmatched}}
@@ -26,3 +27,7 @@
         {{/each}}  
        </div>
      </section>
+
+<footer>
+  {{>footer}}
+</footer>
