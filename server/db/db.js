@@ -5,6 +5,7 @@ const connection = require('knex')(config)
 module.exports = {
   getAll,
   getLoner,
+  getFamily,
 }
 
 function getAll(tableName, db = connection) {
@@ -15,4 +16,8 @@ function getAll(tableName, db = connection) {
 
 function getLoner(firstName, db = connection) {
   return db('loners').select().where('loners.first_name', firstName).first()
+}
+
+function getFamily(surname, db = connection) {
+  return db('families').select().where('families.surname', surname).first()
 }
