@@ -1,0 +1,90 @@
+body{
+  font-family: 'Inter', sans-serif;
+}
+
+a{
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+/* Showing Card -HOMEPAGE */
+
+.card-container {
+  background-color: #ffff;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+}
+
+.front-card {
+  width: 60vh;
+  height: 70vh;
+  padding: 35px;
+  margin: 50px;
+
+  border: 2px solid rgba(255, 255, 255, 0.218);
+  border-radius: 20px;
+  background-color: rgba(255, 211, 140, 0.45);
+  /* box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.08 ); */
+  backdrop-filter: blur(15px);
+  text-decoration: none;
+  color: black;
+} 
+
+.inside-container{
+  position: relative;
+  padding: 1em;
+}
+
+.image-position{
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+
+.card-img-size{
+width: 80%;
+
+}
+
+.text-position{
+padding: 1em ;
+
+}
+
+.text-card {
+letter-spacing: 0.05em;
+line-height: 1.6;
+font-weight: 400;
+font-size: 1.2em;
+}
+
+.title-text{
+  font-size: 1.8em;
+}
+
+.card-footer {
+  font-size: 0.65em;
+  color: #446;
+}
+
+/* Card-END */
+
+/* FOOTER */
+
+.footer-container {
+  width: 100%;
+  height: 30hv;
+  margin: 1em auto;
+  text-align: center;
+}
+
+.footer-text{
+  font-size: 1em;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* FOOTER-END */
