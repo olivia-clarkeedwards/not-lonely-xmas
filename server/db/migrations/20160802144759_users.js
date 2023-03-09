@@ -1,11 +1,17 @@
 exports.up = (knex) => {
-  return knex.schema.createTable('users', (table) => {
+  return knex.schema.createTable('families', (table) => {
     table.increments('id').primary()
-    table.string('name')
-    table.string('email')
+    table.string('surname')
+    table.string('location')
+    table.int('size')
+    table.text('description')
+    table.bool('smokers')
+    table.bool('pets')
+    table.int('loner_id')
+    table.bool('is_matched')
   })
 }
 
 exports.down = (knex) => {
-  return knex.schema.dropTable('users')
+  return knex.schema.dropTable('families')
 }
