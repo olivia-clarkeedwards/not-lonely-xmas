@@ -10,11 +10,18 @@ router.get('/', (req, res) => {
 
 router.get('/all/:table', (req, res) => {
   const table = req.params.table
-  console.log(table)
-  res.send('hi')
+
   db.getAll(table)
-    .then((result) => {
-      console.log(result)
+    .then((unmatched) => {
+      const dataObj = {
+        unmatched,
+      }
+
+      if (table === 'loners') {
+        res.render('allLoners', dataObj)
+      } else if (table === 'families') {
+        res.render('allFamilies', dataObj)
+      }
     })
     .catch((err) => {
       console.log(err.message)
