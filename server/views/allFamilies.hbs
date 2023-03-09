@@ -1,5 +1,8 @@
-{{>navNoButton}}
+ <header>
+  {{>navButton}}
+ </header>
 
+{{!-- 
 {{#each families}}
   <div>
   <img>
@@ -7,4 +10,28 @@
   <p>{{location}}</p>
   <p>{{description}}</p>
   </div>
-{{/each}}
+{{/each}} --}}
+
+<section id = "viewall-display">
+      <div class="viewall-container">
+        {{#each families}}
+           <a class="viewall-front" href="google.com">
+             <div class="inside-container">
+             <div class="image-position">
+               <img src="images/profile.png" class="viewall-img-size" alt="profile">
+             </div>
+             <div class ="text-position">
+                <h2 class="title-text-viewall">The {{surname}}s</h2>
+                <p>{{location}}</p>
+                <p class="text-card-viewall">{{description}}</p>
+             </div>
+           </div>
+           </a>
+        {{/each}}  
+      </div>
+  </section>
+
+  <footer>
+      {{>footer}}
+    </footer>
+
