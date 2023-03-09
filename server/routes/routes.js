@@ -33,4 +33,26 @@ router.get('/all/:table', (req, res) => {
     })
 })
 
+router.get('/loner/:name', (req, res) => {
+  const name = req.params.name
+  db.getLoner(name)
+    .then((loner) => {
+      res.render('lonerDetail', loner)
+    })
+    .catch((err) => {
+      console.log('ohhh noooo', err.message)
+    })
+})
+
+router.get('/family/:name', (req, res) => {
+  const name = req.params.name
+  db.getLoner(name)
+    .then((family) => {
+      res.render('familyDetail', family)
+    })
+    .catch((err) => {
+      console.log('ohhh noooo', err.message)
+    })
+})
+
 module.exports = router
