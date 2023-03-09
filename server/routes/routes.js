@@ -19,13 +19,13 @@ router.get('/all/:table', (req, res) => {
       }
 
       if (table === 'loners') {
-        res.send(unmatched)
+        // res.send(unmatched)
         //Uncomment line below once view created
-        // res.render('allLoners', dataObj)
+        res.render('allLoners', dataObj)
       } else {
-        res.send(unmatched)
+        // res.send(unmatched)
         //Uncomment line below once view created
-        // res.render('allFamilies', dataObj)
+        res.render('allFamilies', dataObj)
       }
     })
     .catch((err) => {
