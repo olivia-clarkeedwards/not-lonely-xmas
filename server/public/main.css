@@ -122,3 +122,45 @@ nav ul a{
 } 
 
 /* END NAVIGATION-BAR */
+
+/* viewAll-Card */
+
+.viewall-container{
+  background-color: #ffff;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+}
+
+.viewall-front {
+  width: 40vh;
+  height: 50vh;
+  padding: 20px;
+  margin: 20px;
+
+  border: 2px solid rgba(255, 255, 255, 0.218);
+  border-radius: 20px;
+  background-color: rgba(255, 189, 104, 0.45);
+  backdrop-filter: blur(15px);
+  text-decoration: none;
+  color: black;
+} 
+
+
+.viewall-img-size{
+width: 60%;
+
+}
+
+.text-card-viewall{
+  letter-spacing: 0.05em;
+  line-height: 1.6;
+  font-weight: 400;
+  font-size: 1em;
+  }
+  
+.title-text-viewall{
+    font-size: 1.5em;
+ }
+
+ /* END-viewAll */
