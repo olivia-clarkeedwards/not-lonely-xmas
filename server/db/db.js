@@ -15,7 +15,7 @@ function getAll(tableName, db = connection) {
 }
 
 function getLoner(firstName, db = connection) {
-  return db('loners').select().where('loners.first_name', firstName).first()
+  return db('loners').select().where('first_name', firstName).first()
 }
 
 function getFamily(surname, db = connection) {
