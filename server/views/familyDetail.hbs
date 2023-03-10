@@ -1,11 +1,29 @@
  <header>
   {{>navNoButton}}
  </header>
-
+{{!-- 
 <img src="">
 
 <div class="">
 <h3>The {{surname}}s</h3>
 <p>{{location}}</p>
 <p>{{description}}</p>
-</div>
+</div> --}}
+
+ <section id = "card-display">
+  <div class="card-container">
+    <a class="front-card" href="/family/{{first_name}}">
+      <div class="inside-container">
+        <div class="image-position">
+          <img src="/images/together.png" class="card-img-size" alt="three people singing">
+        </div>
+        <div class ="text-position">
+          <h2 class="title-text">The {{surname}}s</h2>
+          <p class="text-card">A family of {{size}} in {{location}}.</p>
+          <p class="text-card">{{description}}</p>
+        </div>
+      </div>
+    </a>  
+  </div>
+</section>
+ 
