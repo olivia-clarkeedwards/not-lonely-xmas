@@ -89,4 +89,34 @@ function capitalise(name) {
 // router to get to the confirmation page
 // call a db function where
 
+router.post('/match', (req, res) => {
+  const surname = req.body.surname
+  const first_name = req.body.first_name
+
+  let familyId
+  let lonerId
+
+  db.getFamily(surname)
+    .then((family) => {
+      familyId = family.id
+
+      db.getLoner(first_name)
+        .then((loner) => {
+          lonerId = loner.id
+        })
+        .catch((err) => {
+          console.log(err.message)
+        })
+    })
+    .catch((err) => {
+      console.log(err.message)
+    })
+})
+
+// db.getLoner(first_name)
+//   .then((loner) => {
+//   lonerId = loner.id
+//   db.addMatchIds(familyId, lonerId)
+// })
+
 module.exports = router

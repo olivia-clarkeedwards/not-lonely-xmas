@@ -7,6 +7,8 @@ module.exports = {
   getLoner,
   getFamily,
   addNewFamily,
+  matchWithFamily,
+  addMatchIds,
 }
 
 function getAll(tableName, db = connection) {
@@ -25,4 +27,18 @@ function getFamily(surname, db = connection) {
 
 function addNewFamily(newFamily, db = connection) {
   return db('families').insert(newFamily)
+}
+
+function matchWithFamily(lonerName, db = connection) {
+  return db('families')
+    .select(
+      'families.surname',
+      'families.location AS family_location',
+      'loners.first_name'
+    )
+    .join('loners', 'families.loner_id', 'loners.id')
+}
+
+function addMatchIds(famId, lonerId, db = connection) {
+  db('families').select().first().where('families.id', famId)
 }
