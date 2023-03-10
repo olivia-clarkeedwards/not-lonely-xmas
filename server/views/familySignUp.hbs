@@ -2,34 +2,47 @@
   {{>navNoButton}}
  </header>
 
- <form action="/loner/signup" method="post" class="form">
+<section id = "card-display">
+  <div class="card-container">
+    <a class="front-card" href="/all/families">
+      <div class="inside-container">
+        <div class="image-position">
+          <img src="images/together.png" class="card-img-size" alt="together">
+        </div>
+        <div class ="text-position">
+          <h2 class="title-text">We'll just need some details.</h2>
+          <form action="/loner/signup" method="post" class="form">
 
-  <label for="surname">Family Name</label>
-  <input type="text" name="surname" placeholder="e.g. Smith">
+            <label for="surname">Family Name</label>
+            <input type="text" name="surname" placeholder="e.g. Smith">
 
-  <label for="size">Number of Family Members</label>
-  <input type="text" name="size" placeholder="e.g. 4">
+            <label for="size">Number of Family Members</label>
+            <input type="text" name="size" placeholder="e.g. 4">
 
-  <label for="location">Location</label>
-  <input type="text" name="location" placeholder="e.g. Wales">
+            <label for="location">Location</label>
+            <input type="text" name="location" placeholder="e.g. Wales">
 
-  <label for="smokers">Are smokers welcome in this household?</label>
-  <select>
-    <option value="true">Yes</option>
-    <option name="false">No</option>
-  </select>
+            <label for="smokers">Are smokers welcome in this household?</label>
+            <select>
+              <option value="true">Yes</option>
+              <option name="false">No</option>
+            </select>
 
-  <label for="pets">Does this household have pets?</label>
-  <select>
-    <option value="true">Yes</option>
-    <option name="false">No</option>
-  </select>
+            <label for="pets">Does this household have pets?</label>
+            <select>
+              <option value="true">Yes</option>
+              <option name="false">No</option>
+            </select>
 
-  <label for="description">Description</label>
-  <textarea rows="4" name="description" placeholder="e.g. We are a warm family, looking to welcome you into our home this Xmas!"></textarea>
+            <label for="description">Description</label>
+            <textarea rows="4" name="description" placeholder="e.g. We are a warm family, looking to welcome you into our home this Xmas!"></textarea>
 
-  <button type="submit">Sign Me Up!</button>
+            <button type="submit">Sign Me Up!</button>
 
- </form>
-
-  
+          </form>
+        </div>
+      </div>
+    </a>  
+  </div>
+</section>
+ 
