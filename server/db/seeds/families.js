@@ -37,7 +37,7 @@ exports.seed = function (knex) {
     },
     {
       id: 4,
-      surname: 'Simpsons',
+      surname: 'Simpson',
       location: 'Springfield',
       size: 5,
       description: 'Duuuh duh duh duh duuuuh, duh duh duh dun na na nah',
