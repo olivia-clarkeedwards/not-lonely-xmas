@@ -34,9 +34,11 @@ router.get('/all/:table', (req, res) => {
 })
 
 router.get('/loner/:name', (req, res) => {
-  const name = req.params.name
-  db.getLoner(name)
+  let name = req.params.name
+  const nameData = capitalise(name)
+  db.getLoner(nameData)
     .then((loner) => {
+      console.log(loner)
       res.render('lonerDetail', loner)
     })
     .catch((err) => {
@@ -45,8 +47,9 @@ router.get('/loner/:name', (req, res) => {
 })
 
 router.get('/family/:name', (req, res) => {
-  const name = req.params.name
-  db.getLoner(name)
+  let name = req.params.name
+  const nameData = capitalise(name)
+  db.getFamily(nameData)
     .then((family) => {
       res.render('familyDetail', family)
     })
@@ -54,5 +57,9 @@ router.get('/family/:name', (req, res) => {
       console.log('ohhh noooo', err.message)
     })
 })
+
+function capitalise(name) {
+  return name[0].toUpperCase() + name.substring(1)
+}
 
 module.exports = router
