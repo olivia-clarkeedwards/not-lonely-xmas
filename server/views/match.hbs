@@ -1,0 +1,23 @@
+ <header>
+  {{>navNoButton}}
+ </header>
+
+ {{!-- Careful with names on JOIN --}}
+
+<section id = "card-display">
+  <div class="card-container">
+    <a class="front-card" href="/all/families">
+      <div class="inside-container">
+        <div class="image-position">
+          <img src="images/together.png" class="card-img-size" alt="together">
+        </div>
+        <div class ="text-position">
+          <h2 class="title-text">Hurray! All your Christmas plans are good to go.</h2>
+          <p class="text-card">Here are the details of your new connection: </p>
+          <p class="text-card">{{first_name}} will be spending Christmas with the {{surname}} Family in {{family_location}}. We will contact you with all the festive details shortly.</p>
+        </div>
+      </div>
+    </a>  
+  </div>
+</section>
+ 
