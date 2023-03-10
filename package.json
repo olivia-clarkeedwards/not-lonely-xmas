@@ -11,7 +11,7 @@
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "lint:fix": "eslint . --fix",
     "format": "prettier -w '**/*.{js,jsx,ts,tsx}'",
-    "build": "knex migrate:latest"
+    "build": "npm run knex migrate:latest"
   },
   "repository": {
     "type": "git",
@@ -24,13 +24,15 @@
   },
   "homepage": "https://github.com/dev-academy-challenges/boilerplate-knex#readme",
   "dependencies": {
-    "sqlite3": "^5.1.2",
     "express": "^4.17.2",
     "express-handlebars": "^6.0.2",
     "knex": "^2.3.0",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "pg": "^8.10.0",
+    "sqlite3": "^5.1.2"
   },
   "devDependencies": {
+    "@devacademy/eslint-config": "^1.8.0",
     "@testing-library/dom": "^8.17.1",
     "@testing-library/jest-dom": "^5.16.5",
     "eslint": "^8.10.0",
@@ -41,8 +43,7 @@
     "eslint-plugin-react": "^7.29.4",
     "jest": "^29.2.2",
     "prettier": "2.6.1",
-    "supertest": "^6.2.2",
-    "@devacademy/eslint-config": "^1.8.0"
+    "supertest": "^6.2.2"
   },
   "eslintConfig": {
     "extends": "@devacademy"
