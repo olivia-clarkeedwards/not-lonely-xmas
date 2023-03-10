@@ -1,4 +1,4 @@
- <header>
+ {{!-- <header>
   {{>navNoButton}}
  </header>
 
@@ -8,7 +8,7 @@
 <h3>{{name}}</h3>
 <p>{{age}}</p>
 <p>{{description}}</p>
-</div>
+</div> --}}
 
  <header>
   {{>navNoButton}}
@@ -16,18 +16,22 @@
 
  {{!-- Careful with names on JOIN --}}
 
-<section id = "card-display">
+
+ 
+ <section id = "card-display">
   <div class="card-container">
+    <a class="front-card" href="/loner/{{first_name}}">
       <div class="inside-container">
         <div class="image-position">
-          <img src="/images/profile.png" class="card-img-size" alt="lonely person looking at reflection">
+          <img src="/images/profile.png" class="card-img-size" alt="person looking at reflection in mirror">
         </div>
         <div class ="text-position">
           <h2 class="title-text">{{first_name}}</h2>
-          <p class="text-card">{{age}}</p>
+          <p class="text-card">{{age}} years old</p>
           <p class="text-card">{{description}}</p>
         </div>
-      </div> 
+      </div>
+    </a>  
   </div>
 </section>
  
