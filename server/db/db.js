@@ -6,6 +6,7 @@ module.exports = {
   getAll,
   getLoner,
   getFamily,
+  addNewFamily,
 }
 
 function getAll(tableName, db = connection) {
@@ -20,4 +21,8 @@ function getLoner(firstName, db = connection) {
 
 function getFamily(surname, db = connection) {
   return db('families').select().where('families.surname', surname).first()
+}
+
+function addNewFamily(newFamily, db = connection) {
+  return db('families').insert(newFamily)
 }
