@@ -46,6 +46,30 @@ router.get('/loner/:name', (req, res) => {
     })
 })
 
+router.get('/family/signup', (req, res) => {
+  res.render('familySignUp')
+})
+
+// router to get to the
+router.post('/family/signup', (req, res) => {
+  const { surname, size, location, smokers, pets, description } = req.body
+  const newFamily = {
+    surname: surname,
+    size: size,
+    location: location,
+    description: description,
+    is_matched: false,
+  }
+
+  db.addNewFamily(newFamily)
+    .then(() => {
+      res.redirect('/all/families')
+    })
+    .catch((err) => {
+      console.log('ohhh noooo', err.message)
+    })
+})
+
 router.get('/family/:name', (req, res) => {
   let name = req.params.name
   const nameData = capitalise(name)
@@ -61,5 +85,38 @@ router.get('/family/:name', (req, res) => {
 function capitalise(name) {
   return name[0].toUpperCase() + name.substring(1)
 }
+
+// router to get to the confirmation page
+// call a db function where
+
+router.post('/match', (req, res) => {
+  const surname = req.body.surname
+  const first_name = req.body.first_name
+
+  let familyId
+  let lonerId
+
+  db.getFamily(surname)
+    .then((family) => {
+      familyId = family.id
+
+      db.getLoner(first_name)
+        .then((loner) => {
+          lonerId = loner.id
+        })
+        .catch((err) => {
+          console.log(err.message)
+        })
+    })
+    .catch((err) => {
+      console.log(err.message)
+    })
+})
+
+// db.getLoner(first_name)
+//   .then((loner) => {
+//   lonerId = loner.id
+//   db.addMatchIds(familyId, lonerId)
+// })
 
 module.exports = router
