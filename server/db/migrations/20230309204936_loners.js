@@ -3,9 +3,9 @@ exports.up = (knex) => {
     table.increments('id').primary()
     table.string('location')
     table.string('first_name')
-    table.int('age')
+    table.integer('age')
     table.text('description')
-    table.int('family_id')
+    table.integer('family_id')
     table.bool('is_matched')
   })
 }

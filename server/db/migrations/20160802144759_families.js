@@ -3,11 +3,11 @@ exports.up = (knex) => {
     table.increments('id').primary()
     table.string('surname')
     table.string('location')
-    table.int('size')
+    table.integer('size')
     table.text('description')
     table.bool('smokers')
     table.bool('pets')
-    table.int('loner_id')
+    table.integer('loner_id')
     table.bool('is_matched')
   })
 }
