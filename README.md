@@ -1,10 +1,10 @@
-# Boilerplate: Knex.js
+# A Not So Lonely Xmas
 
-## Setup
+## About
 
-### What's included
+A Not So Lonely Xmas matches families who want to welcome people into their Christmas day with people who are looking for family to spend Christmas with.
 
-Phase 1 boilerplate project with:
+### Uses
 
  - Express
  - Knex
@@ -14,16 +14,11 @@ Phase 1 boilerplate project with:
  - Jest
  - nodemon
 
-### Installation
+### Team Roles
 
-```
-npm install
-npm run knex migrate:latest
-npm run knex seed:run
-npm run dev
-```
+**Vibe checker:** Shadae  
+**Git manager:** Ado
 
-Be sure to check out the other npm scripts too.
+### Learning objectives
 
----
-[Provide feedback on this repo](https://docs.google.com/forms/d/e/1FAIpQLSfw4FGdWkLwMLlUaNQ8FtP2CTJdGDUv6Xoxrh19zIrJSkvT4Q/viewform?usp=pp_url&entry.1958421517=boilerplate-knex)
+Gain familiarity with building routes, as well as creating and interacting with a simple SQL database.
