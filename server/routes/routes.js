@@ -70,6 +70,30 @@ router.post('/family/signup', (req, res) => {
     })
 })
 
+router.get('/loner/signup', (req, res) => {
+  res.render('lonerSignUp')
+})
+
+// router to get to the
+router.post('/loner/signup', (req, res) => {
+  const { first_name, age, location, description } = req.body
+  const newLoner = {
+    first_name: first_name,
+    age: age,
+    location: location,
+    description: description,
+    is_matched: false,
+  }
+
+  db.addNewLoner(newLoner)
+    .then(() => {
+      res.redirect('/all/loners')
+    })
+    .catch((err) => {
+      console.log('ohhh noooo', err.message)
+    })
+})
+
 router.get('/family/:name', (req, res) => {
   let name = req.params.name
   const nameData = capitalise(name)

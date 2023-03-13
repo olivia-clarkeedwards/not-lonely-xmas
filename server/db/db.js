@@ -9,6 +9,7 @@ module.exports = {
   addNewFamily,
   matchWithFamily,
   addMatchIds,
+  addNewLoner,
 }
 
 function getAll(tableName, db = connection) {
@@ -27,6 +28,10 @@ function getFamily(surname, db = connection) {
 
 function addNewFamily(newFamily, db = connection) {
   return db('families').insert(newFamily)
+}
+
+function addNewLoner(newLoner, db = connection) {
+  return db('loners').insert(newLoner)
 }
 
 function matchWithFamily(lonerName, db = connection) {
