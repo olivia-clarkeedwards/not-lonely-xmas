@@ -19,7 +19,7 @@ a{
 
 .front-card {
   width: 60vh;
-  height: 70vh;
+  /* height: 70vh; */
   padding: 35px;
   margin: 50px;
 
@@ -51,7 +51,6 @@ width: 80%;
 
 .text-position{
 padding: 1em ;
-
 }
 
 .text-card {
@@ -71,6 +70,45 @@ font-size: 1.2em;
 }
 
 /* Card-END */
+
+/* FORM */
+
+.form-img-size {
+  width: 55%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input, textarea {
+  border: none;
+  padding: 1em;
+  border-radius: 10px;
+  opacity: 70%;
+}
+
+.form-button {
+  border: none;
+  padding: 0.5em;
+  /* width: 50%; */
+  background-color: rgba(253, 186, 79, 0.45);
+  border-radius: 30px;
+  font-size: 1em;
+  font-weight: 600;
+  color:rgba(110, 74, 28, 0.815);
+  text-transform: uppercase;
+}
+
+
+
+
+
+
+/* FORM */
+
+
 
 /* FOOTER */
 

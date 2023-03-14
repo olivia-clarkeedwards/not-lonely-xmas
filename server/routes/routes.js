@@ -33,24 +33,10 @@ router.get('/all/:table', (req, res) => {
     })
 })
 
-router.get('/loner/:name', (req, res) => {
-  let name = req.params.name
-  const nameData = capitalise(name)
-  db.getLoner(nameData)
-    .then((loner) => {
-      console.log(loner)
-      res.render('lonerDetail', loner)
-    })
-    .catch((err) => {
-      console.log('ohhh noooo', err.message)
-    })
-})
-
 router.get('/family/signup', (req, res) => {
   res.render('familySignUp')
 })
 
-// router to get to the
 router.post('/family/signup', (req, res) => {
   const { surname, size, location, smokers, pets, description } = req.body
   const newFamily = {
@@ -74,7 +60,6 @@ router.get('/loner/signup', (req, res) => {
   res.render('lonerSignUp')
 })
 
-// router to get to the
 router.post('/loner/signup', (req, res) => {
   const { first_name, age, location, description } = req.body
   const newLoner = {
@@ -100,6 +85,19 @@ router.get('/family/:name', (req, res) => {
   db.getFamily(nameData)
     .then((family) => {
       res.render('familyDetail', family)
+    })
+    .catch((err) => {
+      console.log('ohhh noooo', err.message)
+    })
+})
+
+router.get('/loner/:name', (req, res) => {
+  let name = req.params.name
+  const nameData = capitalise(name)
+  db.getLoner(nameData)
+    .then((loner) => {
+      console.log(loner)
+      res.render('lonerDetail', loner)
     })
     .catch((err) => {
       console.log('ohhh noooo', err.message)
