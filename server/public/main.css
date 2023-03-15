@@ -116,6 +116,10 @@ legend {
   text-align: left;
 }
 
+input:checked {
+  accent-color:rgba(110, 74, 28, 0.815);
+}
+
 
 /* FORM ENDS */
 
