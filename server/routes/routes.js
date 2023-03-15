@@ -54,7 +54,7 @@ router.post('/family/signup', (req, res) => {
   const { surname, size, location, smokers, pets, description } = req.body
   console.log(req.body)
   const newFamily = {
-    surname: surname, //capitalise first letter of surname before adding family to db
+    surname: surname.charAt(0).toUpperCase() + surname.substring(1), //capitalise first letter of surname before adding family to db
     size: size,
     location: location,
     description: description,
