@@ -7,7 +7,7 @@ module.exports = {
   getLoner,
   getFamily,
   addNewFamily,
-  matchWithFamily,
+  // matchWithFamily,
   addMatchIds,
   addNewLoner,
 }
@@ -27,6 +27,7 @@ function getFamily(surname, db = connection) {
 }
 
 function addNewFamily(newFamily, db = connection) {
+  //check if family already appears in the database
   return db('families').insert(newFamily)
 }
 
@@ -34,15 +35,15 @@ function addNewLoner(newLoner, db = connection) {
   return db('loners').insert(newLoner)
 }
 
-function matchWithFamily(lonerName, db = connection) {
-  return db('families')
-    .select(
-      'families.surname',
-      'families.location AS family_location',
-      'loners.first_name'
-    )
-    .join('loners', 'families.loner_id', 'loners.id')
-}
+// function matchWithFamily(lonerName, db = connection) {
+//   return db('families')
+//     .select(
+//       'families.surname',
+//       'families.location AS family_location',
+//       'loners.first_name'
+//     )
+//     .join('loners', 'families.loner_id', 'loners.id')
+// }
 
 function addMatchIds(famId, lonerId, db = connection) {
   db('families').select().first().where('families.id', famId)

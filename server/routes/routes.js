@@ -33,14 +33,28 @@ router.get('/all/:table', (req, res) => {
     })
 })
 
+router.get('/loner/:name', (req, res) => {
+  let name = req.params.name
+  const nameData = capitalise(name)
+  db.getLoner(nameData)
+    .then((loner) => {
+      console.log(loner)
+      res.render('lonerDetail', loner)
+    })
+    .catch((err) => {
+      console.log('ohhh noooo', err.message)
+    })
+})
+
 router.get('/family/signup', (req, res) => {
   res.render('familySignUp')
 })
 
 router.post('/family/signup', (req, res) => {
   const { surname, size, location, smokers, pets, description } = req.body
+  console.log(req.body)
   const newFamily = {
-    surname: surname,
+    surname: surname, //capitalise first letter of surname before adding family to db
     size: size,
     location: location,
     description: description,
@@ -83,9 +97,10 @@ router.post('/loner/signup', (req, res) => {
 
 router.get('/family/:name', (req, res) => {
   let name = req.params.name
-  const nameData = capitalise(name)
+  const nameData = capitalise(name) ///problem~!!!!
   db.getFamily(nameData)
     .then((family) => {
+      console.log(family)
       res.render('familyDetail', family)
     })
     .catch((err) => {
