@@ -22,3 +22,14 @@ A Not So Lonely Xmas matches families who want to welcome people into their Chri
 ### Learning objectives
 
 Gain familiarity with building routes, as well as creating and interacting with a simple SQL database.
+
+
+### To do / Bugs
+
+#### olivia branch
+
+[ ] Capitalise first letter of surname before adding family to database
+[ ] Check if family name in data-base before adding family - OR - change getFamily to return family by id rather than surname
+[ ] Create match page which notifies users of successful match and updates db accordingly
+[ ] Add drop down on family and loner detail pages to select match! 
+[ ] split routes out to seperate pages
