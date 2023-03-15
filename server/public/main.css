@@ -89,6 +89,10 @@ input, textarea {
   opacity: 70%;
 }
 
+label {
+  font-size: 0.8em;
+}
+
 .form-button {
   border: none;
   padding: 0.5em;
