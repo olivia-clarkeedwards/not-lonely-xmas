@@ -89,7 +89,7 @@ input, textarea {
   opacity: 70%;
 }
 
-label {
+label, legend {
   font-size: 0.8em;
 }
 
@@ -105,12 +105,19 @@ label {
   text-transform: uppercase;
 }
 
+fieldset {
+  display: inline-block;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  text-align: left;
+}
 
 
-
-
-
-/* FORM */
+/* FORM ENDS */
 
 
 
@@ -176,7 +183,7 @@ nav ul a{
 
 .viewall-front {
   width: 40vh;
-  height: 50vh;
+  /* height: 50vh; */
   padding: 20px;
   margin: 20px;
 

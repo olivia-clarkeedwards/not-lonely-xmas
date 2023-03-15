@@ -1,8 +1,6 @@
  <header>
-  {{>navNoButton}}
+  {{>navReturnToAllButtons}}
  </header>
-
- 
 
  <section id = "card-display">
   <div class="card-container">
@@ -23,23 +21,33 @@
 
             <label for="location">Location</label>
             <input type="text" name="location" placeholder="e.g. Wales"><br>
-          {{!-- 
-            <label for="smokers">Are smokers welcome in this household?</label>
-            <select>
-              <option name='smokers' value="true">Yes</option>
-              <option name='smokers' value="false">No</option>
-            </select>
 
-            <label for="pets">Does this household have pets?</label>
-            <select>
-              <option name='pets' value="true">Yes</option>
-              <option name='pets' value="false">No</option>
-            </select> --}}
+            <fieldset>
+
+              <legend >Smokers welcome?</legend>
+
+              <input type="radio" id="smokers-welcome" name="smokers" value="true">
+              <label for="smokers-welcome">Yes</label><br>
+              <input type="radio" id="smokers-not-welcome" name="smokers" value="false">
+              <label for="smokers-not-welcome">No</label><br>
+
+            </fieldset><br>
+
+            <fieldset>
+
+              <legend >Household has pets?</legend>
+
+              <input type="radio" id="has-pets" name="pets" value="true">
+              <label for="has-pets">Yes</label><br>
+              <input type="radio" id="has-no-pets" name="pets" value="false">
+              <label for="has-no-pets">No</label><br>
+
+            </fieldset><br>
 
             <label for="description">Description</label>
             <textarea rows="4" name="description" placeholder="e.g. We are a warm family, looking to welcome you into our home this Xmas!"></textarea><br>
 
-            <button type="submit" class="text-card form-button">Sign Me Up!</button>
+            <button type="submit" class="text-card form-button">Sign Me Up</button>
 
           </form>
         </div>
