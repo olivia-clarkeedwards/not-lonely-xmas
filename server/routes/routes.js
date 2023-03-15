@@ -52,7 +52,6 @@ router.get('/family/signup', (req, res) => {
 
 router.post('/family/signup', (req, res) => {
   const { surname, size, location, smokers, pets, description } = req.body
-  console.log(req.body)
   const newFamily = {
     surname: surname.charAt(0).toUpperCase() + surname.substring(1), //capitalise first letter of surname before adding family to db
     size: size,
@@ -100,7 +99,6 @@ router.get('/family/:name', (req, res) => {
   const nameData = capitalise(name) ///problem~!!!!
   db.getFamily(nameData)
     .then((family) => {
-      console.log(family)
       res.render('familyDetail', family)
     })
     .catch((err) => {
