@@ -21,6 +21,14 @@
           <h2 class="title-text">The {{surname}} Family</h2>
           <p class="text-card">A family of {{size}} in {{location}}.</p>
           <p class="text-card">{{description}}</p>
+          {{#if smokers}}<p>Allows smokers.</p>
+          {{else}}
+          <p>Smoke free household.</p>
+          {{/if}}
+          {{#if pets}}<p>Household has pets.</p>
+          {{else}}
+          <p>Household has no pets.</p>
+          {{/if}}
         </div>
       </div>
     </div>  
