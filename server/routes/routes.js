@@ -59,8 +59,8 @@ router.post('/family/signup', (req, res) => {
     location: location,
     description: description,
     is_matched: false,
-    smokers: Boolean(smokers),
-    pets: Boolean(pets),
+    smokers: Boolean(smokers) && true,
+    pets: Boolean(pets) && true,
   }
 
   db.addNewFamily(newFamily)

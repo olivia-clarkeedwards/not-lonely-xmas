@@ -14,13 +14,13 @@
           <form action="/family/signup" method="post" class="form text-card">
 
             <label for="surname">Family Name</label>
-            <input type="text" name="surname" placeholder="e.g. Smith"><br>
+            <input type="text" name="surname" placeholder="e.g. Smith" required><br>
 
             <label for="size">Number of Family Members</label>
-            <input type="text" name="size" placeholder="e.g. 4"><br>
+            <input type="text" name="size" placeholder="e.g. 4" required><br>
 
             <label for="location">Location</label>
-            <input type="text" name="location" placeholder="e.g. Wales"><br>
+            <input type="text" name="location" placeholder="e.g. Wales" required><br>
 
             <fieldset>
 
@@ -28,7 +28,7 @@
 
               <input type="radio" id="smokers-welcome" name="smokers" value="true">
               <label for="smokers-welcome">Yes</label><br>
-              <input type="radio" id="smokers-not-welcome" name="smokers" value="false">
+              <input type="radio" id="smokers-not-welcome" name="smokers" value="false" checked>
               <label for="smokers-not-welcome">No</label><br>
 
             </fieldset><br>
@@ -39,12 +39,12 @@
 
               <input type="radio" id="has-pets" name="pets" value="true">
               <label for="has-pets">Yes</label><br>
-              <input type="radio" id="has-no-pets" name="pets" value="false">
+              <input type="radio" id="has-no-pets" name="pets" value="false" checked>
               <label for="has-no-pets">No</label><br>
 
             </fieldset><br>
 
-            <label for="description">Description</label>
+            <label for="description" required>Description</label>
             <textarea rows="4" name="description" placeholder="e.g. We are a warm family, looking to welcome you into our home this Xmas!"></textarea><br>
 
             <button type="submit" class="text-card form-button">Sign Me Up</button>
