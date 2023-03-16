@@ -120,8 +120,25 @@ input:checked {
   accent-color:rgba(110, 74, 28, 0.815);
 }
 
-
 /* FORM ENDS */
+
+/* DROP DOWN */
+
+.drop-down {
+  display: flex;
+  flex-direction: column;
+
+}
+
+select {
+  background: rgba(253, 186, 79, 0.247);
+  border: none;
+  border-radius: 20px;
+  font-family: 'Inter', sans-serif;
+  padding: 1.2em;
+}
+
+/* DROP DOWN END */
 
 
 

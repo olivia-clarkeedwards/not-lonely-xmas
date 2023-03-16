@@ -1,22 +1,8 @@
- {{!-- <header>
-  {{>navNoButton}}
- </header>
-
-<img src="">
-
-<div class="">
-<h3>{{name}}</h3>
-<p>{{age}}</p>
-<p>{{description}}</p>
-</div> --}}
-
  <header>
   {{>navButtonsViewAll}}
  </header>
 
  {{!-- Careful with names on JOIN --}}
-
-
  
  <section id = "card-display">
   <div class="card-container">
@@ -26,12 +12,21 @@
           <img src="/images/profile.png" class="card-img-size" alt="person looking at reflection in mirror">
         </div>
         <div class ="text-position">
-          <h2 class="title-text">{{first_name}}</h2>
-          <p class="text-card">{{age}} years old</p>
-          <p class="text-card">{{description}}</p>
+          <h2 class="title-text">{{loner.first_name}}</h2>
+          <p class="text-card">{{loner.age}} years old</p>
+          <p class="text-card">{{loner.description}}</p>
+          <div class="drop-down">
+            <label for="family-select">Select your family if you would like to host this person.</label><br>
+            <select name="surname" id="family-select" required>
+              {{#each family}}
+                <option value={{surname}}>{{surname}}</option>
+              {{/each}}
+            </select><br>
+            <button type="submit" class="text-card form-button">Submit</button>
+          </div>
         </div>
       </div>
     </div>  
   </div>
-</section>
+ </section>
  

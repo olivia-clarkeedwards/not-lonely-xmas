@@ -29,17 +29,21 @@ router.post('/signup', (req, res) => {
 })
 
 /* SINGLE LONER DETAILS */
-router.get('/:name', (req, res) => {
+router.get('/:name', async (req, res) => {
   let name = req.params.name
   const nameData = capitalise(name)
-  db.getLoner(nameData)
-    .then((loner) => {
-      console.log(loner)
-      res.render('lonerDetail', loner)
-    })
-    .catch((err) => {
-      console.log('ohhh noooo', err.message)
-    })
+
+  try {
+    const loner = await db.getLoner(nameData)
+    const family = await db.getAll('families')
+    const data = {
+      loner,
+      family,
+    }
+    res.render('lonerDetail', data)
+  } catch (error) {
+    console.log('ohhh noooo', error.message)
+  }
 })
 
 module.exports = router
