@@ -10,4 +10,8 @@ function validateTableName(inputTable) {
   }
 }
 
-module.exports = { validateTableName }
+function capitalise(name) {
+  return name[0].toUpperCase() + name.substring(1)
+}
+
+module.exports = { validateTableName, capitalise }

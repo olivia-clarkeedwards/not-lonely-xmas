@@ -1,5 +1,5 @@
  <header>
-  {{>navReturnToAllButtons}}
+  {{>navButtonsViewAll}}
  </header>
 
 <section id = "card-display">
@@ -14,16 +14,16 @@
           <form class="text-card form" action="/loner/signup" method="post">
 
             <label for="first_name">First Name</label>
-            <input type="text" name="first_name" placeholder="e.g. Ted"><br>
+            <input type="text" name="first_name" placeholder="e.g. Ted" required><br>
 
             <label for="age">Age</label>
-            <input type="text" name="age" placeholder="e.g. 35"><br>
+            <input type="text" name="age" placeholder="e.g. 35" required><br>
 
             <label for="location">Location</label>
-            <input type="text" name="location" placeholder="e.g. Wales"><br>
+            <input type="text" name="location" placeholder="e.g. Wales" required><br>
 
             <label for="description">Description</label>
-            <textarea rows="4" name="description" placeholder="e.g. I'm a lonely man looking for a home for Xmas"></textarea><br>
+            <textarea rows="4" name="description" placeholder="e.g. I'm a lonely man looking for a home for Xmas" required></textarea><br>
 
             <button class="text-card form-button" type="submit">Sign me up</button>
 
