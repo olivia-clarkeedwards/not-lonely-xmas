@@ -7,7 +7,7 @@ router.get('/signup', (req, res) => {
   res.render('familySignUp')
 })
 
-router.post('/signup', (req, res) => {
+router.post('/signup', async (req, res) => {
   const { surname, size, location, smokers, pets, description } = req.body
   const newFamily = {
     surname: capitalise(surname),
@@ -19,13 +19,12 @@ router.post('/signup', (req, res) => {
     pets: Boolean(pets) && true,
   }
 
-  db.addNewFamily(newFamily)
-    .then(() => {
-      res.redirect('/all/families')
-    })
-    .catch((err) => {
-      console.log('ohhh noooo', err.message)
-    })
+  try {
+    await db.addNewFamily(newFamily)
+    res.redirect('/all/families')
+  } catch (error) {
+    console.log('ohhh noooo', error.message)
+  }
 })
 
 router.get('/:id', async (req, res) => {
