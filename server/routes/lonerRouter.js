@@ -28,7 +28,7 @@ router.post('/signup', async (req, res) => {
 
 /* SINGLE LONER DETAILS */
 router.get('/:id', async (req, res) => {
-  let id = Number(req.params.name)
+  const id = Number(req.params.id)
 
   try {
     const loner = await db.getLoner(id)
