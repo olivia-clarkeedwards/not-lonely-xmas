@@ -9,7 +9,7 @@ router.get('/signup', (req, res) => {
 })
 
 /* PROCESS LONER SIGN UP FORM */
-router.post('/signup', (req, res) => {
+router.post('/signup', async (req, res) => {
   const { first_name, age, location, description } = req.body
   const newLoner = {
     first_name: capitalise(first_name),
@@ -18,14 +18,12 @@ router.post('/signup', (req, res) => {
     description: description,
     is_matched: false,
   }
-
-  db.addNewLoner(newLoner)
-    .then(() => {
-      res.redirect('/all/loners')
-    })
-    .catch((err) => {
-      console.log('ohhh noooo', err.message)
-    })
+  try {
+    await db.addNewLoner(newLoner)
+    res.redirect('/all/loners')
+  } catch (error) {
+    console.log('ohhh noooo', error.message)
+  }
 })
 
 /* SINGLE LONER DETAILS */
