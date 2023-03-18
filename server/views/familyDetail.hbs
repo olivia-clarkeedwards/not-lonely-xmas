@@ -1,15 +1,6 @@
  <header>
   {{>navButtonsViewAll}}
  </header>
-{{!-- 
-<img src="">
-
-<div class="">
-<h3>The {{surname}}s</h3>
-<p>{{location}}</p>
-<p>{{description}}</p>
-</div> --}}
-
  <section id = "card-display">
   <div class="card-container">
     <div class="front-card">
@@ -18,17 +9,26 @@
           <img src="/images/together.png" class="card-img-size" alt="three people singing">
         </div>
         <div class ="text-position">
-          <h2 class="title-text">The {{surname}} Family</h2>
-          <p class="text-card">A family of {{size}} in {{location}}.</p>
-          <p class="text-card">{{description}}</p>
-          {{#if smokers}}<p>Allows smokers.</p>
+          <h2 class="title-text">The {{family.surname}} Family</h2>
+          <p class="text-card">A family of {{family.size}} in {{family.location}}.</p>
+          <p class="text-card">{{family.description}}</p>
+          {{#if family.smokers}}<p>Allows smokers.</p>
           {{else}}
           <p>Smoke free household.</p>
           {{/if}}
-          {{#if pets}}<p>Household has pets.</p>
+          {{#if family.pets}}<p>Household has pets.</p>
           {{else}}
           <p>Household has no pets.</p>
           {{/if}}
+          <div class="drop-down">
+            <label for="loner-select">Select your name if you would like to spend Christmas with this family.</label><br>
+            <select name="surname" id="loner-select" required>
+              {{#each loner}}
+                <option value={{first_name}}>{{first_name}}</option>
+              {{/each}}
+            </select><br>
+            <button type="submit" class="text-card form-button">Submit</button>
+          </div>
         </div>
       </div>
     </div>  

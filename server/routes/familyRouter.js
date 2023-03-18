@@ -28,16 +28,23 @@ router.post('/signup', (req, res) => {
     })
 })
 
-router.get('/:name', (req, res) => {
+router.get('/:name', async (req, res) => {
   let name = req.params.name
   const nameData = capitalise(name)
-  db.getFamily(nameData)
-    .then((family) => {
-      res.render('familyDetail', family)
-    })
-    .catch((err) => {
-      console.log('ohhh noooo', err.message)
-    })
+
+  try {
+    const family = await db.getFamily(nameData)
+    const loner = await db.getAll('loners')
+
+    const data = {
+      family,
+      loner,
+    }
+
+    res.render('familyDetail', data)
+  } catch (error) {
+    console.log('ohhh noooo', error.message)
+  }
 })
 
 module.exports = router
