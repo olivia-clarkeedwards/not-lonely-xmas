@@ -18,16 +18,15 @@ function getAll(tableName, db = connection) {
     .where(tableName + '.is_matched', false)
 }
 
-function getLoner(firstName, db = connection) {
-  return db('loners').select().where('first_name', firstName).first()
+function getLoner(id, db = connection) {
+  return db('loners').select().where('loners.id', id).first()
 }
 
-function getFamily(surname, db = connection) {
-  return db('families').select().where('families.surname', surname).first()
+function getFamily(id, db = connection) {
+  return db('families').select().where('families.id', id).first()
 }
 
 function addNewFamily(newFamily, db = connection) {
-  //check if family already appears in the database
   return db('families').insert(newFamily)
 }
 

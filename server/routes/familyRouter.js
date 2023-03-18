@@ -28,12 +28,11 @@ router.post('/signup', (req, res) => {
     })
 })
 
-router.get('/:name', async (req, res) => {
-  let name = req.params.name
-  const nameData = capitalise(name)
+router.get('/:id', async (req, res) => {
+  const id = Number(req.params.id)
 
   try {
-    const family = await db.getFamily(nameData)
+    const family = await db.getFamily(id)
     const loner = await db.getAll('loners')
 
     const data = {

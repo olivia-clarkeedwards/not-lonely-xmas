@@ -12,7 +12,7 @@ router.get('/signup', (req, res) => {
 router.post('/signup', (req, res) => {
   const { first_name, age, location, description } = req.body
   const newLoner = {
-    first_name: first_name,
+    first_name: capitalise(first_name),
     age: age,
     location: location,
     description: description,
@@ -29,12 +29,11 @@ router.post('/signup', (req, res) => {
 })
 
 /* SINGLE LONER DETAILS */
-router.get('/:name', async (req, res) => {
-  let name = req.params.name
-  const nameData = capitalise(name)
+router.get('/:id', async (req, res) => {
+  let id = Number(req.params.name)
 
   try {
-    const loner = await db.getLoner(nameData)
+    const loner = await db.getLoner(id)
     const family = await db.getAll('families')
     const data = {
       loner,
