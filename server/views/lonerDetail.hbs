@@ -15,7 +15,7 @@
           <h2 class="title-text">{{loner.first_name}}</h2>
           <p class="text-card">{{loner.age}} years old</p>
           <p class="text-card">{{loner.description}}</p>
-          <div class="drop-down">
+          <form method="post" action="/loner/{{loner.id}}" class="drop-down">
             <label for="family-select">Select your family if you would like to host this person.</label><br>
             <select name="surname" id="family-select" required>
               {{#each family}}
@@ -23,7 +23,7 @@
               {{/each}}
             </select><br>
             <button type="submit" class="text-card form-button">Submit</button>
-          </div>
+          </form>
         </div>
       </div>
     </div>  
