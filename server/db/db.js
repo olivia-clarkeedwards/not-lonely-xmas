@@ -39,12 +39,14 @@ function addNewLoner(newLoner, db = connection) {
 function setLonerIsMatched(familyId, id, db = connection) {
   return db('loners').where('id', id).update({
     is_matched: true,
+    family_id: familyId,
   })
 }
 
 function setFamilyIsMatched(lonerId, id, db = connection) {
   return db('families').where('id', id).update({
     is_matched: true,
+    loner_id: lonerId,
   })
 }
 
