@@ -49,8 +49,8 @@ router.post('/match/:id', async (req, res) => {
   const familyId = Number(req.params.id)
   const lonerId = Number(req.body.id)
 
-  await db.setIsMatched('loners', lonerId)
-  await db.setIsMatched('families', familyId)
+  await db.setLonerIsMatched(familyId, lonerId)
+  await db.setFamilyIsMatched(lonerId, familyId)
 
   res.redirect('/all/families') //create match page
 })
