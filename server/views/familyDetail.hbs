@@ -20,15 +20,17 @@
           {{else}}
           <p>Household has no pets.</p>
           {{/if}}
+          <form id="dropdown" method="post" action="/family/match/{{family.id}}" class="drop-down">
           <div class="drop-down">
             <label for="loner-select">Select your name if you would like to spend Christmas with this family.</label><br>
-            <select name="surname" id="loner-select" required>
+            <select name="id" id="loner-select"  form="dropdown" required>
               {{#each loner}}
-                <option value={{first_name}}>{{first_name}}</option>
+                <option name="id" id="loner-select" form="dropdown" value={{id}}>{{first_name}}</option>
               {{/each}}
             </select><br>
             <button type="submit" class="text-card form-button">Submit</button>
           </div>
+          </form>
         </div>
       </div>
     </div>  
