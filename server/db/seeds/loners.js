@@ -7,7 +7,7 @@ exports.seed = function (knex) {
       age: 17,
       description:
         "Hi! I'm Terry, I am a student at Durmstrang and am visiting the UK and looking for a family to spend Christmas with.",
-      family_id: '',
+      family_id: null,
       is_matched: false,
     },
     {
@@ -16,7 +16,7 @@ exports.seed = function (knex) {
       first_name: 'Ernie',
       age: 24,
       description: "My family are away for Christmas so I'm all aloooone!",
-      family_id: '',
+      family_id: null,
       is_matched: false,
     },
     {
@@ -26,7 +26,7 @@ exports.seed = function (knex) {
       age: 27,
       description:
         "I'm a muggle, but would really love to spend Christmas with a wizarding family.",
-      family_id: '',
+      family_id: null,
       is_matched: false,
     },
     {
@@ -36,7 +36,7 @@ exports.seed = function (knex) {
       age: 45,
       description:
         "Hi diddly-ho! I'm looking for a special fam to spend Christmas with!",
-      family_id: '',
+      family_id: null,
       is_matched: false,
     },
   ])

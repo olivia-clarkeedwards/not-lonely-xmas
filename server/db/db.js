@@ -10,7 +10,8 @@ module.exports = {
   // matchWithFamily,
   addMatchIds,
   addNewLoner,
-  setIsMatched,
+  setLonerIsMatched,
+  setFamilyIsMatched,
 }
 
 function getAll(tableName, db = connection) {
@@ -35,8 +36,14 @@ function addNewLoner(newLoner, db = connection) {
   return db('loners').insert(newLoner)
 }
 
-function setIsMatched(tableName, id, db = connection) {
-  return db(tableName).where('id', id).update({
+function setLonerIsMatched(familyId, id, db = connection) {
+  return db('loners').where('id', id).update({
+    is_matched: true,
+  })
+}
+
+function setFamilyIsMatched(lonerId, id, db = connection) {
+  return db('families').where('id', id).update({
     is_matched: true,
   })
 }

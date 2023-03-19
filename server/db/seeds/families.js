@@ -9,7 +9,7 @@ exports.seed = function (knex) {
         'Hi there, we are the Potters, we excited to welcome any loners to our Christmas table. Muggles are also welcome!',
       smokers: false,
       pets: true,
-      loner_id: '',
+      loner_id: null,
       is_matched: false,
     },
     {
@@ -21,7 +21,7 @@ exports.seed = function (knex) {
         'We are the Weasleys, a warm and friendly family ready happy to host any loners for Christmas!',
       smokers: false,
       pets: true,
-      loner_id: '',
+      loner_id: null,
       is_matched: false,
     },
     {
@@ -32,7 +32,7 @@ exports.seed = function (knex) {
       description: 'We only want pure-bloods',
       smokers: true,
       pets: true,
-      loner_id: '',
+      loner_id: null,
       is_matched: false,
     },
     {
@@ -43,7 +43,7 @@ exports.seed = function (knex) {
       description: 'Duuuh duh duh duh duuuuh, duh duh duh dun na na nah',
       smokers: false,
       pets: true,
-      loner_id: '',
+      loner_id: null,
       is_matched: false,
     },
   ])
