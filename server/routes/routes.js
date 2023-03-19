@@ -27,37 +27,11 @@ router.get('/all/:table', (req, res) => {
     })
 })
 
-// router to get to the confirmation page
-// call a db function where
+router.get('/match/:family', async (req, res) => {
+  const familyId = req.params.family
+  const family = await db.confirmMatch(familyId)
 
-// router.post('/match', (req, res) => {
-//   const surname = req.body.surname
-//   const first_name = req.body.first_name
-
-//   let familyId
-//   let lonerId
-
-//   db.getFamily(surname)
-//     .then((family) => {
-//       familyId = family.id
-
-//       db.getLoner(first_name)
-//         .then((loner) => {
-//           lonerId = loner.id
-//         })
-//         .catch((err) => {
-//           console.log(err.message)
-//         })
-//     })
-//     .catch((err) => {
-//       console.log(err.message)
-//     })
-// })
-
-// db.getLoner(first_name)
-//   .then((loner) => {
-//   lonerId = loner.id
-//   db.addMatchIds(familyId, lonerId)
-// })
+  res.render('match', family)
+})
 
 module.exports = router

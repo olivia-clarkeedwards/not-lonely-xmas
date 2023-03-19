@@ -12,6 +12,7 @@ module.exports = {
   addNewLoner,
   setLonerIsMatched,
   setFamilyIsMatched,
+  confirmMatch,
 }
 
 function getAll(tableName, db = connection) {
@@ -50,15 +51,18 @@ function setFamilyIsMatched(lonerId, id, db = connection) {
   })
 }
 
-// function matchWithFamily(lonerName, db = connection) {
-//   return db('families')
-//     .select(
-//       'families.surname',
-//       'families.location AS family_location',
-//       'loners.first_name'
-//     )
-//     .join('loners', 'families.loner_id', 'loners.id')
-// }
+function confirmMatch(familyId, db = connection) {
+  return db('families')
+    .select(
+      'families.surname',
+      'families.location AS family_location',
+      'loners.first_name',
+      'loners.location AS loner_location'
+    )
+    .where('families.id', familyId)
+    .join('loners', 'families.loner_id', 'loners.id')
+    .first()
+}
 
 function addMatchIds(famId, lonerId, db = connection) {
   db('families').select().first().where('families.id', famId)
