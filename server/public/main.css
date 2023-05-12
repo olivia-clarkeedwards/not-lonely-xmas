@@ -19,16 +19,10 @@ a{
 
 .front-card {
   width: 60vh;
-  /* height: 70vh; */
   padding: 35px;
   margin: 50px;
-
-  border: 2px solid rgba(255, 255, 255, 0.218);
   border-radius: 20px;
-  background-color: rgba(255, 211, 140, 0.45);
-  /* box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.08 ); */
-  backdrop-filter: blur(15px);
-  text-decoration: none;
+  background-color: rgba(253, 186, 79, 0.247);
   color: black;
 } 
 
@@ -46,7 +40,10 @@ align-items: center;
 
 .card-img-size{
 width: 80%;
+}
 
+.card-img-size-detail {
+  width: 40%;
 }
 
 .text-position{
@@ -96,8 +93,7 @@ label, legend {
 .form-button {
   border: none;
   padding: 0.5em;
-  /* width: 50%; */
-  background-color: rgba(253, 186, 79, 0.45);
+  background-color: rgba(253, 186, 79, 0.4);
   border-radius: 30px;
   font-size: 1em;
   font-weight: 600;
@@ -139,8 +135,6 @@ select {
 }
 
 /* DROP DOWN END */
-
-
 
 /* FOOTER */
 
@@ -203,14 +197,12 @@ nav ul a{
 }
 
 .viewall-front {
-  width: 40vh;
-  /* height: 50vh; */
   padding: 20px;
   margin: 20px;
 
   border: 2px solid rgba(255, 255, 255, 0.218);
   border-radius: 20px;
-  background-color: rgba(255, 189, 104, 0.45);
+  background-color: rgba(253, 186, 79, 0.247);
   backdrop-filter: blur(15px);
   text-decoration: none;
   color: black;
